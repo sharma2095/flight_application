@@ -1,25 +1,37 @@
+import axios from "axios";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 function Register() {
+  const nav = useNavigate();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
   const onFormSubmit = (userData) => {
-    console.log(userData);
+    const userObj = {
+      userName: userData["userName"],
+      email: userData["email"],
+      gender: userData["gender"],
+      dob: userData["dob"],
+    };
+    axios.post("http://localhost:3200/api/register", userObj).then((res) => {
+      if (res.status === 200) {
+      //NAVIGATE TO LOGIN
+      }
+    });
   };
   return (
     <div className="col-11 col-sm-8 col-md-6 mx-auto mt-3">
       <div className="display-3 text-success mt-1 mb-0">User Registration</div>
       <form onSubmit={handleSubmit(onFormSubmit)} className="mt-5">
-
         <div className="mb-0">
           <label htmlFor="user">Username</label>
           <input
             type="text"
             id="user"
             className="form-control"
-            {...register("username", { required: true, minLength: 4 })}
+            {...register("userName", { required: true, minLength: 4 })}
           />
           {errors.username?.type === "required" && (
             <p className="text-danger">*Username required</p>
