@@ -12,7 +12,7 @@ function Register() {
     <div className="col-11 col-sm-8 col-md-6 mx-auto mt-3">
       <div className="display-3 text-success mt-1 mb-0">User Registration</div>
       <form onSubmit={handleSubmit(onFormSubmit)} className="mt-5">
-        {/Username/}
+
         <div className="mb-0">
           <label htmlFor="user">Username</label>
           <input
@@ -28,7 +28,6 @@ function Register() {
             <p className="text-danger">*Min length is 4</p>
           )}
         </div>
-        {/Email/}
         <div className="mb-3">
           <label htmlFor="email">Email</label>
           <input
@@ -41,7 +40,6 @@ function Register() {
             <p className="text-danger">*Email is required</p>
           )}
         </div>
-        {/Dob/}
         <div className="mb-3">
           <label htmlFor="dob">Date of Birth</label>
           <input
@@ -56,7 +54,6 @@ function Register() {
         </div>
         <div className="mb-3">
           <label>Gender</label>
-          {/Male/}
           <div className="">
             <div className="form-check d-flex">
               <input
@@ -70,7 +67,6 @@ function Register() {
                 Male
               </label>
             </div>
-            {/Female/}
             <div className="form-check d-flex">
               <input
                 type="radio"
