@@ -15,9 +15,9 @@ function Register() {
       gender: userData["gender"],
       dob: userData["dob"],
     };
-    axios.post("http://localhost:3200/api/register", userObj).then((res) => {
+    axios.post("http://localhost:3200/api/register", userObj).then((res) => {   
       if (res.status === 200) {
-      //NAVIGATE TO LOGIN
+        //NAVIGATE TO LOGIN
       }
     });
   };

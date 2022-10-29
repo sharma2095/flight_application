@@ -1,16 +1,15 @@
-import React, { useState } from "react";
-
-import logo from "./logo.svg";
+import React from "react";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import { Routes, Route } from "react-router-dom";
 import Register from "./Register";
-import { login } from "./login";
+import Login from "./Login";
 
 function App() {
   return (
     <div>
       <Routes>
         <Route path="/" element={<Register />} />
+        <Route path="login" element={<Login />} />
       </Routes>
     </div>
   );
